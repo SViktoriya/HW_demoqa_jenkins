@@ -13,9 +13,9 @@ public class TestData {
     public static String userEmail = faker.internet().emailAddress();
     public static String genterWrapper = faker.demographic().sex();
     public static String userNumber = faker.phoneNumber().subscriberNumber(10);
-    public static String birthDay = String.valueOf(faker.number().numberBetween(1, 29));
+    public static String birthDay = "17";
     public static String birthMonth = "September";
-    public static String birthYear = String.valueOf(faker.number().numberBetween(1990, 2000));
+    public static String birthYear = "2000";
     public static String subjects = "English";
     public static String hobbies = "Reading";
     public static String filePath = "img/1.png";

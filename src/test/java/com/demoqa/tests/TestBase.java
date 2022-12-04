@@ -3,6 +3,7 @@ package com.demoqa.tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.Attach;
+import helpers.Properties;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -22,10 +23,13 @@ public class TestBase {
 
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "2000x2000";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.browser = Properties.browser();
+        Configuration.browserVersion = Properties.browserVersion();
+        Configuration.browserSize = Properties.browserSize();
+        if (!Properties.remoteUrl().equals("")) {
+            Configuration.remote = Properties.remoteUrl();
+        }
     }
-
     @AfterEach
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");

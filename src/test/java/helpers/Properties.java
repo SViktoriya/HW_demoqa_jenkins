@@ -3,7 +3,7 @@ package helpers;
 public class Properties {
 
     public static String browser() {
-        return System.getProperty("browser", "Safari");
+        return System.getProperty("browser", "Chrome");
     }
 
     public static String browserVersion() {
